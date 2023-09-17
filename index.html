@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet" />
     <title>Rizki Triananda</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
             spacing: {
@@ -29,24 +28,28 @@
       };
     </script>
   </head>
-  <body>
-    <div id="mode"></div>
+  <body class="">
+    <nav class="flex lg:justify-center">
+      <button class="open-close lg:hidden bg-orange-500 w-fit h-fit p-1 rounded-full fixed top-3 right-5 transition-all duration-500 z-20">
+        <img src="svg/icon-open.svg" alt="" class="w-8 h-8 rotate-0 transition-all duration-100" />
+      </button>
 
-    <header class="flex justify-center">
-      <nav class="flex justify-center items-center w-fit h-14 px-10 rounded-full bg-[#2A9D8F] shadow-lg fixed top-3 z-50">
-        <ul class="flex w-fit h-fit text-slate-900 font-semibold font-poppins tracking-wide">
-          <li class="mr-2 px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#">Home</a></li>
-          <li class="mr-2 px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#skills">Skills</a></li>
-          <li class="mr-2 px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#portfolio">Portfolio</a></li>
-          <li class="px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#certificates">Certificates</a></li>
-        </ul>
-      </nav>
-    </header>
+      <ul
+        class="flex flex-col -mr-4 sm:flex-row lg:justify-center items-center w-fit h-full lg:h-14 px-10 lg:rounded-full bg-[#2A9D8F] shadow-lg fixed right-0 lg:top-3 z-50 pt-10 sm:pt-0 font-semibold font-poppins tracking-wide translate-x-full sm:-translate-x-full transition-all duration-500"
+      >
+        <li class="mr-2 px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#">Home</a></li>
+        <li class="mr-2 px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#skills">Skills</a></li>
+        <li class="mr-2 px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#portfolio">Portfolio</a></li>
+        <li class="px-3 py-1 cursor-pointer transition-all duration-100 hover:bg-slate-800 hover:rounded-2xl hover:text-slate-100"><a href="#certificates">Certificates</a></li>
+      </ul>
+    </nav>
+
+    <div class="layer fixed w-full h-screen z-10 bg-[rgba(0,0,0,0.5)] hidden transition-all duration-100"></div>
 
     <main>
       <div id="home" class="w-full h-screen bg-sky-950 flex items-center justify-center">
-        <div id="aboutme" class="">
-          <p class="text-slate-100 w-fit h-fit font-roboto_mono leading-8">
+        <div id="aboutme" class="p-5">
+          <p class="text-slate-100 w-fit h-fit font-roboto_mono lg:leading-8 leading-6 mb-2">
             Hi, Namaku <strong class="text-[#ffa621]">Rizki Triananda</strong>, aku adalah seorang pelajar di SMK NEGERI 1 Banyumas <br />
             aku memiliki skill dibidang <strong class="text-[#ffa621]">Front-end</strong> Developer.
           </p>
@@ -94,7 +97,7 @@
           </div>
         </div>
 
-        <div id="illustration" class="h-fit">
+        <div id="illustration" class="h-fit hidden lg:flex">
           <img src="./img/illiustration-webp-laptop.webp" alt="" class="w-60 drop-shadow-xl" />
         </div>
       </div>
@@ -155,55 +158,74 @@
       <div id="portfolio" class="w-full bg-sky-950 pt-28 pb-28">
         <h1 class="font-inter font-bold text-center text-2xl mb-10 text-white tracking-wider selection:bg-white selection:text-slate-900">Portfolio</h1>
         <div id="card" class="flex flex-wrap justify-between w-[88%] mx-auto text-white">
-          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11">
+          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11 relative">
             <img src="./img/Image-Editor.png " alt="" class="w-[570px]" />
             <p class="pt-3 pr-3 pl-3 pb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore.</p>
-            <a href="" class="group flex items-center w-fit ml-[490px]">
+            <div class="flex w-fit ml-4 mt-3">
+              <img src="./svg/html.svg" alt="" class="mr-[1px]" />
+              <img src="./svg/css.svg" alt="" class="mr-1" />
+              <img src="./svg//js.svg" alt="" />
+            </div>
+            <a href="" class="group w-fit h-fit flex items-center absolute right-5 bottom-5">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
                 <path
                   d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                 />
               </svg>
-              <strong class="tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
+              <strong class="mr-5 tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
             </a>
           </div>
 
-          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11">
-            <img src="./img/Info-Film.png " alt="" class="w-[570px] h-[288.4px]" />
+          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11 relative">
+            <img src="./img/Info-Film.png " alt="" class="w-[570px] sm:h-[288.4px] h-[200px]" />
             <p class="pt-3 pr-3 pl-3 pb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore.</p>
-            <a href="" class="group flex items-center w-fit ml-[490px]">
+            <div class="flex w-fit ml-4 mt-3">
+              <img src="./svg/html.svg" alt="" class="mr-[1px]" />
+              <img src="./svg/css.svg" alt="" class="mr-1" />
+            </div>
+            <a href="" class="group w-fit h-fit flex items-center absolute right-5 bottom-5">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
                 <path
                   d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                 />
               </svg>
-              <strong class="tracking-wide mr-5 text-slate-200 group-hover:text-teal-500">Lihat</strong>
+              <strong class="mr-5 tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
             </a>
           </div>
 
-          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11">
+          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11 relative">
             <img src="./img/To-Do-List.png" alt="" class="w-[570px]" />
             <p class="pt-3 pr-3 pl-3 pb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore.</p>
-            <a href="" class="group flex items-center w-fit ml-[490px]">
+            <div class="flex w-fit ml-4 mt-3">
+              <img src="./svg/html.svg" alt="" class="mr-[1px]" />
+              <img src="./svg/css.svg" alt="" class="mr-1" />
+              <img src="./svg//js.svg" alt="" />
+            </div>
+            <a href="" class="group w-fit h-fit flex items-center absolute right-5 bottom-5">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
                 <path
                   d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                 />
               </svg>
-              <strong class="tracking-wide mr-5 text-slate-200 group-hover:text-teal-500">Lihat</strong>
+              <strong class="mr-5 tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
             </a>
           </div>
 
-          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11">
+          <div class="pb-5 bg-[#062b42] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11 relative">
             <img src="./img/Suit-Jawa.png" alt="" class="w-[570px]" />
             <p class="pt-3 pr-3 pl-3 pb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore.</p>
-            <a href="" class="group flex items-center w-fit ml-[490px]">
+            <div class="flex w-fit ml-4 mt-3">
+              <img src="./svg/html.svg" alt="" class="mr-[1px]" />
+              <img src="./svg/css.svg" alt="" class="mr-1" />
+              <img src="./svg//js.svg" alt="" />
+            </div>
+            <a href="" class="group w-fit h-fit flex items-center absolute right-5 bottom-5">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
                 <path
                   d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                 />
               </svg>
-              <strong class="tracking-wide mr-5 text-slate-200 group-hover:text-teal-500">Lihat</strong>
+              <strong class="mr-5 tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
             </a>
           </div>
         </div>
@@ -212,46 +234,94 @@
       <div id="certificates" class="bg-slate-900 pt-28">
         <h1 class="font-inter font-bold text-center text-2xl mb-10 text-white tracking-wider selection:bg-white selection:text-slate-900">Certificates</h1>
         <div id="card" class="flex flex-wrap justify-between w-[88%] mx-auto text-white">
-          <div class="pb-5 bg-[#131d38] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11">
-            <img src="./img/sertifikat python.jpg " alt="" class="w-[570px] h-[300px]" />
+          <div class="pb-5 bg-[#131d38] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11 relative">
+            <img src="./img/sertifikat python.jpg " alt="" class="w-[570px] h-[230px] sm:h-[300px]" />
             <p class="pt-3 pr-3 pl-3 pb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore.</p>
-            <a href="" class="group flex items-center w-fit ml-[490px]">
-              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
-                <path
-                  d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
-                />
-              </svg>
-              <strong class="tracking-wide mr-5 text-slate-200 group-hover:text-teal-500">Lihat</strong>
-            </a>
+            <div class="w-full flex justify-end mt-4">
+              <a href="" class="group w-fit h-fit flex items-center mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
+                  <path
+                    d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
+                  />
+                </svg>
+                <strong class="mr-5 tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
+              </a>
+            </div>
           </div>
 
-          <div class="pb-5 bg-[#131d38] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11">
-            <img src="./img/networking.jpg " alt="" class="w-[570px] h-[300px]" />
+          <div class="pb-5 bg-[#131d38] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11 relative">
+            <img src="./img/networking.jpg " alt="" class="w-[570px] h-[230px] sm:h-[300px]" />
             <p class="pt-3 pr-3 pl-3 pb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore.</p>
-            <a href="" class="group flex items-center w-fit ml-[490px]">
-              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
-                <path
-                  d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
-                />
-              </svg>
-              <strong class="tracking-wide mr-5 text-slate-200 group-hover:text-teal-500">Lihat</strong>
-            </a>
+            <div class="w-full flex justify-end mt-4">
+              <a href="" class="group w-fit h-fit flex items-center mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
+                  <path
+                    d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
+                  />
+                </svg>
+                <strong class="mr-5 tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
+              </a>
+            </div>
           </div>
 
-          <div class="pb-5 bg-[#131d38] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11">
-            <img src="./img//sertifikat-course-dicoding1.jpg" alt="" class="w-[570px] h-[300px]" />
+          <div class="pb-5 bg-[#131d38] border-[1px] border-slate-400 rounded-lg overflow-hidden mb-11 relative">
+            <img src="./img//sertifikat-course-dicoding1.jpg" alt="" class="w-[570px] h-[230px] sm:h-[300px]" />
             <p class="pt-3 pr-3 pl-3 pb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolore.</p>
-            <a href="" class="group flex items-center w-fit ml-[490px]">
-              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
-                <path
-                  d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
-                />
-              </svg>
-              <strong class="tracking-wide mr-5 text-slate-200 group-hover:text-teal-500">Lihat</strong>
-            </a>
+            <div class="w-full flex justify-end mt-4">
+              <a href="" class="group w-fit h-fit flex items-center mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="fill-emerald-500 mr-1">
+                  <path
+                    d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
+                  />
+                </svg>
+                <strong class="mr-5 tracking-wide text-slate-200 group-hover:text-teal-500">Lihat</strong>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </main>
+
+    <script>
+      const btnOpenClose = document.querySelector("nav .open-close");
+      const imgBtn = document.querySelector("nav .open-close img");
+      const navbar = document.querySelector("nav ul");
+      const navLi = document.querySelectorAll("nav ul li");
+      const layer = document.querySelector(".layer");
+
+      btnOpenClose.addEventListener("click", function () {
+        let returnBtn = btnOpenClose.classList.toggle("active");
+
+        if (returnBtn == true) {
+          navbar.classList.replace("translate-x-full", "translate-x-0");
+          imgBtn.classList.replace("rotate-0", "rotate-180");
+          btnOpenClose.classList.replace("right-5", "right-56");
+
+          document.body.classList.add("overflow-hidden");
+          layer.classList.replace("hidden", "flex");
+        } else {
+          navbar.classList.replace("translate-x-0", "translate-x-full");
+          imgBtn.classList.replace("rotate-180", "rotate-0");
+          btnOpenClose.classList.replace("right-56", "right-5");
+
+          document.body.classList.remove("overflow-hidden");
+          layer.classList.replace("flex", "hidden");
+        }
+
+        navLi.forEach((e) => {
+          e.addEventListener("click", function () {
+            returnBtn = false;
+            if (returnBtn === false) {
+              navbar.classList.replace("translate-x-0", "translate-x-full");
+              imgBtn.classList.replace("rotate-180", "rotate-0");
+              btnOpenClose.classList.replace("right-56", "right-5");
+
+              document.body.classList.remove("overflow-hidden");
+              layer.classList.replace("flex", "hidden");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
